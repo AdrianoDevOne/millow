@@ -156,7 +156,7 @@ describe('Escrow', () => {
         })
     })
 
-    describe.only('Cancel Sale', () => {
+    describe('Cancel Sale', () => {
         beforeEach(async () => {
             let transaction = await escrow.connect(buyer).depositEarnest(1, { value: tokens(5) });
             await transaction.wait();
@@ -183,7 +183,6 @@ describe('Escrow', () => {
 
             const buyerFinalBalance = await ethers.provider.getBalance(buyer.address);
             const expectedBuyerBalance = buyerInitialBalance.sub(gasCost);
-            console.log(buyerFinalBalance.toString(), expectedBuyerBalance.toString())
             expect(buyerFinalBalance).to.be.closeTo(expectedBuyerBalance, ethers.utils.parseUnits('0.01', 'ether'));
         })
     })

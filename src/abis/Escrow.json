@@ -220,7 +220,7 @@
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "_nftID",
+                "name": "_nftId",
                 "type": "uint256"
             },
             {
