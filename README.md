@@ -30,5 +30,8 @@ In a separate terminal execute:
 ### 7. Start frontend
 `$ npm run start`
 
+## Run Nodes
+npx hardhat node
+
 ## Deploy
 npx hardhat run scripts/deploy.js --network localhost

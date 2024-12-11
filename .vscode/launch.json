@@ -5,6 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch React App",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/src",
+            "sourceMaps": true,
+            "trace": true,
+            "runtimeArgs": [
+                "--remote-debugging-port=9222"
+            ]
+        },
+        {
+            "name": "Attach to React App",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}/src",
+            "sourceMaps": true,
+            "trace": true
+        },
+        {
             "name": "Hardhat individual test",
             "type": "node",
             "request": "launch",

@@ -22,7 +22,7 @@ async function main() {
 
   for (let i = 1; i <= 3; i++) {
     const transaction = await realEstate.connect(seller)
-      .mint(`https://ipfs.io/ipfs/QmQUozrHLAusXDxrvsESJ3PYB3rUeUuBAvVWw6nop2uu7c/${i}.png`);
+      .mint(`https://ipfs.io/ipfs/QmQVcpsjrA6cr1iJjZAodYwmPekYgbnXGo4DFubJiLc2EB/${i}.json`);
     await transaction.wait();
   }
 
