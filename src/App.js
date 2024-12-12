@@ -33,10 +33,12 @@ function App() {
         // Request account access if needed
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-        setAccount(accounts[0]);
+        const account = ethers.utils.getAddress(accounts[0])
+        setAccount(account);
 
         window.ethereum.on('accountsChanged', function (accounts) {
-          setAccount(accounts[0]);
+          const account = ethers.utils.getAddress(accounts[0])
+          setAccount(account);
         });
 
         const realEstate = new ethers.Contract(config[network.chainId].realEstate.address, RealEstate, provider)
@@ -101,6 +103,7 @@ function App() {
           ))}
         </div>
       </div>
+      {toggle ? <Home home={home} provider={provider} account={account} escrow={escrow} togglePop={togglePop} /> : null}
     </div>
   );
 }
